@@ -17,4 +17,8 @@ const createMessage = (message) => {
   messagesUl.appendChild(li);
 };
 
-socket.on('serverMessage', ({user, message}) => createMessage(`${user} enviou: ${message}`));
+socket.on('serverMessage', (message) => createMessage(message));
+
+window.onbeforeunload = function(event) {
+  socket.disconnect();
+};
