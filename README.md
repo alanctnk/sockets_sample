@@ -6,3 +6,6 @@
 - socket.on('eventoCustomizado') : Escutar um evento qualquer.
 - socket.on('disconnect') : Escutar o evento disparado quando um usuário se desconecta.
 - socket.disconnect : Força o encerramento de uma conexão socket.
+##
+- socket.join : Conecta um cliente a uma sala específica.
+- socket.broacast.to(x).emit e io.to(x).emit : Funciona equivalente ao que já vimos anteriormente, porém enviando a mensagem apenas para os clientes que estiverem conectados a sala x .
