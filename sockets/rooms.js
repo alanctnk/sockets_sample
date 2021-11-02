@@ -11,6 +11,8 @@ module.exports = (io) => io.on('connection', (socket) => {
         .to(room)
         .emit('roomServerMessage', `${username}: ${message}`)
     });
+    socket.on('disconnect', () => {
+      socket.broadcast.emit('roomServerMessage', `${username} saiu da sala.`);
+    });
   });
-
-});
+})

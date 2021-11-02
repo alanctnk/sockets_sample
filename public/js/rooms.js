@@ -25,3 +25,7 @@ const createMessage = (message) => {
 }
 
 socket.on('roomServerMessage', (message) => createMessage(message));
+
+window.onbeforeunload = function(event) {
+  socket.disconnect();
+};
